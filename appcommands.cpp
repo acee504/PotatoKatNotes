@@ -1,9 +1,12 @@
 #include <iostream>
 #include <cstring>
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <fstream>
 
-void seeAllEntries(){
+#include "entryeditor.cpp"
 
-}
 void addFolder(){
 
 }
@@ -13,16 +16,34 @@ void deleteEntry(){
 void deleteFolder(){
 
 }
+void closeApp(){
+
+}
+void listCommands(){
+  std::cout << "list of all commands: " << std::endl;
+  std::cout << "1. commands" << std::endl;
+  std::cout << "2. stop" << std::endl;
+  std::cout << "3. new" << std::endl;
+}
 void enterCommand(){
   std::cout << "What would you like to do? type commands for a list of all commands: ";
   
   std::string command;
   std::cin >> command;
 
-  if(command == "commands"){
-    std::cout << "list of all commands: " << std::endl;
-    std::cout << "commands" << std::endl;
+  //Makes the string input lower case
+  std::transform(command.begin(), command.end(), command.begin(),
+    [](unsigned char c){ return std::tolower(c); });
 
+  if(command == "commands"){
+    listCommands();
+    enterCommand();
+  }
+  else if(command == "stop"){
+    closeApp();
+  }
+  else if(command == "new"){
+    addEntry();
     enterCommand();
   }
   else{
