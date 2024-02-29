@@ -11,7 +11,7 @@ void addFolder(){
 
 }
 void deleteEntry(){
-
+  //make this next
 }
 void deleteFolder(){
 
@@ -24,6 +24,7 @@ void listCommands(){
   std::cout << "1. commands" << std::endl;
   std::cout << "2. stop" << std::endl;
   std::cout << "3. new" << std::endl;
+  std::cout << "4. delete" << std::endl;
 }
 void enterCommand(){
   std::cout << "What would you like to do? type commands for a list of all commands: ";
@@ -44,6 +45,10 @@ void enterCommand(){
   }
   else if(command == "new"){
     addEntry();
+    enterCommand();
+  }
+  else if(command == "delete"){
+    deleteEntry();
     enterCommand();
   }
   else{
