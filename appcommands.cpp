@@ -11,7 +11,28 @@ void addFolder(){
 
 }
 void deleteEntry(){
-  //make this next
+  //complete location of file with path
+  std::string fileLocStr;
+  std::cout << "What entry would you like to delete: "; std::cin >> fileLocStr; std::cout << std::endl;
+  fileLocStr.append(".txt");
+
+  //create dos command to delete file
+  std::string delFileCmd = "del /s /q " + fileLocStr;
+  std::cout << "delFileCmd: " << delFileCmd << std::endl;
+
+  //this executes the command
+  int delFileStatus = system(delFileCmd.c_str());
+  //prettier format
+  std::cout << std::endl;
+}
+void readEntry(){
+  std::string inn;
+  std::cout << "What file would you like to open: "; std::cin >> inn; std::cout << std::endl;
+  std::ifstream f(inn+".txt");
+  //opens file
+  if (f.is_open())
+    std::cout << f.rdbuf();
+  std::cout<<std::endl;
 }
 void deleteFolder(){
 
@@ -25,10 +46,10 @@ void listCommands(){
   std::cout << "2. stop" << std::endl;
   std::cout << "3. new" << std::endl;
   std::cout << "4. delete" << std::endl;
+  std::cout << "5. open" << std::endl;
 }
 void enterCommand(){
   std::cout << "What would you like to do? type commands for a list of all commands: ";
-  
   std::string command;
   std::cin >> command;
 
@@ -51,9 +72,12 @@ void enterCommand(){
     deleteEntry();
     enterCommand();
   }
+  else if(command == "open"){
+    readEntry();
+    enterCommand();
+  }
   else{
     std::cout << "The command you tried to use was invalid" << std::endl;
-
     enterCommand();
   }
 }
