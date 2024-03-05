@@ -25,14 +25,23 @@ void deleteEntry(){
   //prettier format
   std::cout << std::endl;
 }
+int checkEntry(){
+  std::ifstream file("file.txt");
+  if(!file.is_open()){
+    return 1;
+  } else{return 0;}
+}
 void readEntry(){
   std::string inn;
-  std::cout << "What file would you like to open: "; std::cin >> inn; std::cout << std::endl;
+  std::cout << "What file would you like to open: "; std::cin >> inn; std::cout;
   std::ifstream f(inn+".txt");
-  //opens file
-  if (f.is_open())
-    std::cout << f.rdbuf();
-  std::cout<<std::endl;
+  if(checkEntry()==1){std::cout<<std::endl<<"The file you tried openning does not exist!"<<std::endl<<std::endl;}
+  else if(checkEntry()==0){
+    //opens file
+    if (f.is_open())
+      std::cout << f.rdbuf();
+    std::cout<<std::endl;
+  }
 }
 void deleteFolder(){
 
