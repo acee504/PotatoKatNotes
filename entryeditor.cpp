@@ -18,7 +18,7 @@ void addEntry(){
   if(validateEntry(filename) == 0){
     std::ofstream outfile (path+filename+".txt");
     std::string input;
-    std::cout << "Enter the contents: "; std::getline(std::cin, input); 
+    std::cout << "Enter the contents: "<<std::endl; std::getline(std::cin, input); 
     outfile << input << std::endl;
     std::cout << std::endl;   
     outfile.close();
@@ -26,5 +26,5 @@ void addEntry(){
   else if(validateEntry(filename)==1){std::cout << std::endl << "A file with that name already exists!" << std::endl << std::endl;}
 }
 void editEntry(){
-
+  //Last thing to finish
 }
