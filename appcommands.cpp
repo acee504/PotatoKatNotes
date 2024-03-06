@@ -78,7 +78,6 @@ void enterCommand(){
   std::cout << "What would you like to do? type help for a list of all commands: ";
   std::string command;
   std::cin >> command;
-
   //Makes the string input lower case
   std::transform(command.begin(), command.end(), command.begin(),
     [](unsigned char c){ return std::tolower(c); });
