@@ -22,9 +22,10 @@ void addEntry(){
     outfile << input << std::endl;
     std::cout << std::endl;   
     outfile.close();
-  }
-  else if(validateEntry(filename)==1){std::cout << std::endl << "A file with that name already exists!" << std::endl << std::endl;}
+  } else if(validateEntry(filename)==1){std::cout << std::endl << "A file with that name already exists!" << std::endl << std::endl;}
 }
 void editEntry(){
-  //Last thing to finish
+  //make this for the visual program
 }
+
+//rewrite code to work with visuals

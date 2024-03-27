@@ -12,3 +12,4 @@ int main(){
   } else{std::system("mkdir C:\\PKN"); std::cout<<msg<<std::endl; enterCommand();}
   return 0;
 }
+//code the visuals too; choose a language. See if you can make it in c++ too, if not look for another one or if you can design apps with html and css

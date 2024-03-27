@@ -91,3 +91,5 @@ void enterCommand(){
   else if(command == "see"){seeAllEntries();enterCommand();}
   else{std::cout<<"The command you tried to use was invalid"<<std::endl;enterCommand();}
 }
+
+//rewrite code to work with visuals
