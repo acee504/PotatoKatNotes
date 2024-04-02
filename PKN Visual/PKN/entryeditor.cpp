@@ -10,15 +10,10 @@ int validateEntry(std::string i){
     return 1;
   } else{return 0;}
 }
-void addEntry(){
+void addEntry(std::string filename, std::string input){
   const char path[] = "/PKN/";
-  std::string filename;
-  std::cout << "Name the entry: "; std::getline(std::cin, filename); 
-  std::getline(std::cin, filename); 
   if(validateEntry(filename) == 0){
     std::ofstream outfile (path+filename+".txt");
-    std::string input;
-    std::cout << "Enter the contents: "<<std::endl; std::getline(std::cin, input); 
     outfile << input << std::endl;
     std::cout << std::endl;   
     outfile.close();
@@ -27,5 +22,3 @@ void addEntry(){
 void editEntry(){
   //make this for the visual program
 }
-
-//rewrite code to work with visuals
